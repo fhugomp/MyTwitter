@@ -15,9 +15,6 @@ flake8 = "^7.1.2"
 black = "^25.1.0"
 isort = "^6.0.0"
 
-[tool.poetry.scripts]
-lint = "black . && isort . && flake8"
-
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
