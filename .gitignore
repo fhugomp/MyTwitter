@@ -1,3 +1,13 @@
+# Ignorar ambiente virtual do Poetry
+.venv/
+
+# Arquivos do Poetry que podem ser regenerados
+poetry.lock
+
+# Configurações do editor/IDE
+.vscode/
+.idea/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
