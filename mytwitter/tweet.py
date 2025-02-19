@@ -1,4 +1,7 @@
 from datetime import datetime
+# import sys
+# sys.path.append('/home/hugomendes/Projetos/MyTwitter')
+
 
 from utils.gerador_id import gerador_id
 
