@@ -26,3 +26,21 @@ def test_get_cpf(pessoa_teste):
     
     # O CPF é do tipo string?
     assert isinstance(perfil.get_cpf(), str)
+
+def test_cpf_invalido():
+    # O CPF é vazio?
+    with pytest.raises(ValueError):
+        PessoaFisica('@usuario_teste', '')
+
+    # O CPF não é string?
+    with pytest.raises(TypeError):
+        PessoaFisica('@usuario_teste', 12345678912)
+
+def test_usuario_invalido():
+    # O usuário é vazio?
+    with pytest.raises(ValueError):
+        PessoaFisica('', '123456789-12')
+
+    # O usuário não é string?
+    with pytest.raises(TypeError):
+        PessoaFisica(123, '123456789-12')
