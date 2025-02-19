@@ -1,6 +1,6 @@
 from datetime import datetime
 
-from tweet import Tweet
+from MyTwitter.tweet import Tweet
 
 
 class Perfil:
@@ -25,6 +25,12 @@ class Perfil:
         return sorted(
             self.__tweets, key=lambda tweet: tweet.get_data_postagem(), reverse=True
         )
+        
+    def get_seguidores(self) -> list:
+        return self.__seguidores
+    
+    def get_seguidos(self) -> list:
+        return self.__seguidos
 
     def get_tweet(self, id: str) -> Tweet:
         for tweet in self.get_tweets():
