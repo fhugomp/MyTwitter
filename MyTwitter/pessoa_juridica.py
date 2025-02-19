@@ -1,7 +1,8 @@
 from MyTwitter.perfil import Perfil
 
+
 class PessoaJuridica(Perfil):
-    def __init__(self, usuario:str, cnpj:str) -> None:
+    def __init__(self, usuario: str, cnpj: str) -> None:
         if not isinstance(usuario, str):
             raise TypeError("O usuário deve ser uma string.")
 
@@ -16,6 +17,6 @@ class PessoaJuridica(Perfil):
 
         super().__init__(usuario)
         self.__cnpj = cnpj
-        
+
     def get_cnpj(self) -> str:
         return self.__cnpj

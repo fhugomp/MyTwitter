@@ -25,10 +25,10 @@ class Perfil:
         return sorted(
             self.__tweets, key=lambda tweet: tweet.get_data_postagem(), reverse=True
         )
-        
+
     def get_seguidores(self) -> list:
         return self.__seguidores
-    
+
     def get_seguidos(self) -> list:
         return self.__seguidos
 

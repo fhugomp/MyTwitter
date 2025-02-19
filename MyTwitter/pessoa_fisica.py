@@ -1,7 +1,8 @@
 from MyTwitter.perfil import Perfil
 
+
 class PessoaFisica(Perfil):
-    def __init__(self, usuario:str, cpf:str):
+    def __init__(self, usuario: str, cpf: str):
         if not isinstance(usuario, str):
             raise TypeError("O usuário deve ser uma string.")
 
@@ -15,6 +16,6 @@ class PessoaFisica(Perfil):
             raise ValueError("O CPF deve ser uma string não vazia.")
         super().__init__(usuario)
         self.__cpf = cpf
-        
+
     def get_cpf(self) -> str:
         return self.__cpf
