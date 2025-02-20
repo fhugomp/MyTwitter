@@ -24,20 +24,35 @@ O **MyTwitter** é uma versão simplificada do popular serviço de microblogging
 
 ## 📂 Estrutura do Projeto
 ```
-mytwitter/
-│── mytwitter/               # Diretório do código-fonte
-│   ├── __init__.py
-│   ├── tweet.py
-│   ├── perfil.py
-│   ├── repositorio.py
-│   ├── mytwitter.py
-│── tests/                   # Diretório para testes unitários
-│   ├── test_tweet.py
-│   ├── test_perfil.py
-│   ├── test_repositorio.py
-│── pyproject.toml           # Arquivo de configuração do Poetry
-│── README.md                # Documentação do projeto
-│── .gitignore               # Arquivo para ignorar arquivos no Git
+exceptions/
+│── __init__.py
+│── mfp_exception.py
+│── pd_exception.py
+│── pe_exception.py
+│── pi_exception.py
+│── si_exception.py
+│── ujc_exception.py
+│── unc_exception.py
+MyTwitter/
+│── __init__.py
+│── mytwitter.py
+│── perfil.py
+│── pessoa_fisica.py
+│── pessoa_juridica.py
+│── repositorio.py
+│── tweet.py
+tests/
+│── __init__.py
+│── test_mytwitter.py
+│── test_perfil.py
+│── test_pessoa_fisica.py
+│── test_pessoa_juridica.py
+│── test_repositorio.py
+│── test_tweet.py
+utils/
+│── __init__.py
+│── gerador_id.py
+
 ```
 
 ## 🛠️ Configuração e Instalação
