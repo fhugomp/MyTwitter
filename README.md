@@ -1,7 +1,7 @@
 # MyTwitter
 
----
 **Desenvolvido para a disciplina CK0442 - Técnicas de Programação para Ciência de Dados (UFC).** 🎓
+
 ---
 
 ## 📌 Descrição
