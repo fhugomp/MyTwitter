@@ -72,7 +72,7 @@ poetry run pytest
 ```
 ### 4️⃣ Executar o projeto
 ```bash
-poetry run python mytwitter.py
+poetry run python demo.py
 ```
 
 ## 📜 Regras e Restrições
