@@ -7,9 +7,11 @@ from MyTwitter.mytwitter import MyTwitter
 from MyTwitter.perfil import Perfil
 from MyTwitter.pessoa_fisica import PessoaFisica
 from MyTwitter.pessoa_juridica import PessoaJuridica
+import time
 
 # Criando instância do sistema
 twitter = MyTwitter()
+time.sleep(1)
 
 # Criando perfis
 try:
@@ -20,6 +22,7 @@ try:
     print("✅ Perfis criados com sucesso!")
 except PEException as e:
     print(f"⚠️ Erro ao criar perfil: {e}")
+time.sleep(1)
 
 # Tweetando
 try:
@@ -28,6 +31,7 @@ try:
     print("✅ Tweets postados com sucesso!")
 except (PIException, PDException, MFPException) as e:
     print(f"⚠️ Erro ao tweetar: {e}")
+time.sleep(1)
 
 # Seguindo usuários
 try:
@@ -35,6 +39,7 @@ try:
     print("✅ @joao agora segue @empresaX!")
 except (PIException, PDException, SIException) as e:
     print(f"⚠️ Erro ao seguir: {e}")
+time.sleep(1)
 
 # Exibindo timeline de João
 try:
@@ -43,6 +48,7 @@ try:
         print(f"{tweet.get_usuario()}: {tweet.get_mensagem()}")
 except (PIException, PDException) as e:
     print(f"⚠️ Erro ao carregar timeline: {e}")
+time.sleep(1)
 
 # Listando seguidores
 try:
@@ -50,6 +56,7 @@ try:
     print(f"👥 Seguidores de @empresaX: {num_seguidores}")
 except (PIException, PDException) as e:
     print(f"⚠️ Erro ao contar seguidores: {e}")
+time.sleep(1)
 
 # Listando seguidos
 try:
@@ -57,6 +64,7 @@ try:
     print(f"📌 @joao segue: {[p.get_usuario() for p in seguidos]}")
 except (PIException, PDException) as e:
     print(f"⚠️ Erro ao listar seguidos: {e}")
+time.sleep(1)
 
 # Cancelando perfil
 try:
@@ -64,3 +72,4 @@ try:
     print("❌ @joao foi desativado!")
 except (PIException, PDException) as e:
     print(f"⚠️ Erro ao cancelar perfil: {e}")
+time.sleep(1)
