@@ -61,6 +61,9 @@ terminal.py
 ### 1️⃣ Clonar o repositório
 ```bash
 git clone https://github.com/fhugomp/MyTwitter.git
+
+```
+```bash
 cd MyTwitter
 ```
 ### 2️⃣ Instalar dependências com Poetry
