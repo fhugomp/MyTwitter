@@ -1,11 +1,12 @@
-from MyTwitter.perfil import Perfil
-from exceptions.unc_exception import UNCException
 from exceptions.ujc_exception import UJCException
+from exceptions.unc_exception import UNCException
+from MyTwitter.perfil import Perfil
+
 
 class RepositorioUsuarios:
     def __init__(self):
         self.__usuarios = []
-        
+
     def cadastrar(self, usuario: Perfil) -> None:
         """
         Cadastra um novo usuário no repositório.
@@ -22,10 +23,12 @@ class RepositorioUsuarios:
 
         try:
             self.buscar(usuario.get_usuario())
-            raise UJCException(f"O usuário '{usuario.get_usuario()}' já está cadastrado.")
+            raise UJCException(
+                f"O usuário '{usuario.get_usuario()}' já está cadastrado."
+            )
         except UNCException:
-            self.__usuarios.append(usuario) 
-            
+            self.__usuarios.append(usuario)
+
     def buscar(self, usuario: str) -> Perfil | None:
         """
         Busca um usuário pelo nome de usuário.
@@ -43,7 +46,7 @@ class RepositorioUsuarios:
             if perfil.get_usuario() == usuario:
                 return perfil
         raise UNCException(f"O usuário '{usuario}' não foi encontrado.")
-    
+
     def atualizar(self, novo_usuario: Perfil) -> None:
         """
         Atualiza um perfil de usuário existente no repositório.
@@ -60,7 +63,9 @@ class RepositorioUsuarios:
 
         for pos, perfil in enumerate(self.__usuarios):
             if perfil.get_usuario() == novo_usuario.get_usuario():
-                self.__usuarios[pos] = novo_usuario  
+                self.__usuarios[pos] = novo_usuario
                 return
-        
-        raise UNCException(f"O usuário '{novo_usuario.get_usuario()}' não está cadastrado.")
+
+        raise UNCException(
+            f"O usuário '{novo_usuario.get_usuario()}' não está cadastrado."
+        )
