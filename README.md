@@ -60,7 +60,7 @@ terminal.py
 ## 🛠️ Configuração e Instalação
 ### 1️⃣ Clonar o repositório
 ```bash
-git clone https://github.com/SEU_USUARIO/MyTwitter.git
+git clone https://github.com/fhugomp/MyTwitter.git
 cd MyTwitter
 ```
 ### 2️⃣ Instalar dependências com Poetry
@@ -75,7 +75,11 @@ poetry run pytest
 ```bash
 poetry run python demo.py
 ```
+ou
+```bash
+poetry run python termianal.py
 
+```
 ## 📜 Regras e Restrições
 - O nome de usuário deve ser único.
 - Tweets podem ter no mínimo 1 e no máximo 140 caracteres.
