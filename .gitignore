@@ -1,6 +1,9 @@
 # Ignorar ambiente virtual do Poetry
 .venv/
 
+# Arquivo asdf
+.tool-versions
+
 # Arquivos do Poetry que podem ser regenerados
 poetry.lock
 
