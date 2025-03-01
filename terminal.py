@@ -1,6 +1,6 @@
-from MyTwitter.mytwitter import MyTwitter
-from MyTwitter.perfil import Perfil
-from MyTwitter.pessoa_juridica import PessoaJuridica
+from main.mytwitter import MyTwitter
+from main.perfil import Perfil
+from main.pessoa_juridica import PessoaJuridica
 
 def terminal_interativo():
     twitter = MyTwitter()
@@ -48,7 +48,7 @@ def terminal_interativo():
                 timeline = twitter.timeline(usuario)
                 print(f"Timeline de '{usuario}':")
                 for tweet in timeline:
-                    print(f"{tweet.get_usuario()} ----------- ({tweet.get_data_postagem()}) \n{tweet.get_mensagem()}\n")
+                    print(f"@{tweet.get_usuario()} ----------- ({tweet.get_data_postagem()}) \n{tweet.get_mensagem()}\n")
 
             elif escolha == "5":
                 usuario = input("Digite o nome de usuário: ")

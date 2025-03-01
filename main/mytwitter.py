@@ -55,7 +55,7 @@ class MyTwitter:
             # Se o usuário não for encontrado
             raise PIException(f"O perfil '{usuario}' não existe.")
 
-        if not perfil.get_ativo():
+        if perfil is None or not perfil.get_ativo():
             raise PDException(f"O perfil '{usuario}' já está desativado.")
 
         perfil.set_ativo(False)
@@ -85,7 +85,7 @@ class MyTwitter:
         except UNCException:
             raise PIException("O perfil não existe.")
 
-        if not usuario_buscado.get_ativo():
+        if usuario_buscado is None or not usuario_buscado.get_ativo():
             raise PDException("O perfil está desativado.")
 
         novo_tweet = Tweet(usuario, mensagem)
@@ -114,7 +114,7 @@ class MyTwitter:
         except UNCException:
             raise PIException("O perfil não existe.")
 
-        if not usuario_buscado.get_ativo():
+        if usuario_buscado is None or not usuario_buscado.get_ativo():
             raise PDException("O perfil está desativado.")
 
         return usuario_buscado.get_timeline()
@@ -141,7 +141,7 @@ class MyTwitter:
         except UNCException:
             raise PIException("O perfil não existe.")
 
-        if not usuario_buscado.get_ativo():
+        if usuario_buscado is None or not usuario_buscado.get_ativo():
             raise PDException("O perfil está desativado.")
 
         return usuario_buscado.get_tweets()
@@ -172,7 +172,7 @@ class MyTwitter:
         except UNCException:
             raise PIException("Um dos perfis não existe.")
 
-        if not perfil_seguidor.get_ativo() or not perfil_seguido.get_ativo():
+        if perfil_seguidor is None or not perfil_seguidor.get_ativo() or perfil_seguido is None or not perfil_seguido.get_ativo():
             raise PDException("Um dos perfis está desativado.")
 
         # Adiciona o seguido à lista de seguidos do seguidor
@@ -204,7 +204,7 @@ class MyTwitter:
         except UNCException:
             raise PIException("O perfil não existe.")
 
-        if not perfil.get_ativo():
+        if perfil is None or not perfil.get_ativo():
             raise PDException("O perfil está desativado.")
 
         # Filtra os seguidores ativos
@@ -237,7 +237,7 @@ class MyTwitter:
         except UNCException:
             raise PIException("O perfil não existe.")
 
-        if not perfil.get_ativo():
+        if perfil is None or not perfil.get_ativo():
             raise PDException("O perfil está desativado.")
 
         # Filtra os seguidores ativos
@@ -270,7 +270,7 @@ class MyTwitter:
         except UNCException:
             raise PIException("O perfil não existe.")
 
-        if not perfil.get_ativo():
+        if perfil is None or not perfil.get_ativo():
             raise PDException("O perfil está desativado.")
 
         # Filtra apenas os perfis seguidos que estão ativos

@@ -3,10 +3,10 @@ from exceptions.pd_exception import PDException
 from exceptions.pe_exception import PEException
 from exceptions.pi_exception import PIException
 from exceptions.si_exception import SIException
-from MyTwitter.mytwitter import MyTwitter
-from MyTwitter.perfil import Perfil
-from MyTwitter.pessoa_fisica import PessoaFisica
-from MyTwitter.pessoa_juridica import PessoaJuridica
+from main.mytwitter import MyTwitter
+from main.perfil import Perfil
+from main.pessoa_fisica import PessoaFisica
+from main.pessoa_juridica import PessoaJuridica
 import time
 
 # Criando instância do sistema
