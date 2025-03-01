@@ -2,7 +2,7 @@ from datetime import datetime
 
 import pytest
 
-from MyTwitter.tweet import Tweet
+from main.tweet import Tweet
 
 
 @pytest.fixture

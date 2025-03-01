@@ -1,7 +1,7 @@
 import pytest
 
-from MyTwitter.perfil import Perfil
-from MyTwitter.tweet import Tweet
+from main.perfil import Perfil
+from main.tweet import Tweet
 
 
 @pytest.fixture

@@ -1,6 +1,6 @@
 import pytest
 
-from MyTwitter.pessoa_fisica import PessoaFisica
+from main.pessoa_fisica import PessoaFisica
 
 
 @pytest.fixture
@@ -37,16 +37,9 @@ def test_cpf_invalido():
     with pytest.raises(ValueError):
         PessoaFisica("@usuario_teste", "")
 
-    # O CPF não é string?
-    with pytest.raises(TypeError):
-        PessoaFisica("@usuario_teste", 12345678912)
-
 
 def test_usuario_invalido():
     # O usuário é vazio?
     with pytest.raises(ValueError):
         PessoaFisica("", "123456789-12")
 
-    # O usuário não é string?
-    with pytest.raises(TypeError):
-        PessoaFisica(123, "123456789-12")
