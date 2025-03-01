@@ -63,7 +63,7 @@ class Perfil:
         """
         return self.__seguidos
 
-    def get_tweet(self, id: str) -> Tweet:
+    def get_tweet(self, id: str) -> Tweet | None:
         """Pega um tweet especifico pelo id
 
         Args:
