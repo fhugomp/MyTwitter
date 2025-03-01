@@ -1,6 +1,6 @@
 from datetime import datetime
 
-from utils import gerador_id
+from utils.gerador_id import gerador_id
 
 id_gerado = gerador_id()
 
