@@ -48,7 +48,7 @@ def terminal_interativo():
                 timeline = twitter.timeline(usuario)
                 print(f"Timeline de '{usuario}':")
                 for tweet in timeline:
-                    print(f"@{tweet.get_usuario()} ----------- ({tweet.get_data_postagem()}) \n{tweet.get_mensagem()}\n")
+                    print(f"\n@{tweet.get_usuario()} ----------- ({tweet.get_data_postagem()}) \n{tweet.get_mensagem()}")
 
             elif escolha == "5":
                 usuario = input("Digite o nome de usuário: ")
