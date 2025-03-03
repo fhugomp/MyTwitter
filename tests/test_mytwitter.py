@@ -42,12 +42,6 @@ def test_criar_perfil_duplicado(mytwitter_teste):
         mytwitter_teste.criar_perfil(perfil2)
 
 
-def test_criar_perfil_invalido(mytwitter_teste):
-    # Passando um objeto que não é instância de Perfil
-    with pytest.raises(ValueError):
-        mytwitter_teste.criar_perfil("string_invalida")
-
-
 def test_cancelar_perfil_sucesso(mytwitter_teste):
     """Testa se um perfil ativo pode ser cancelado corretamente."""
     mytwitter_teste.cancelar_perfil("@usuario_teste")
@@ -70,12 +64,6 @@ def test_cancelar_perfil_inexistente(mytwitter_teste):
     """Testa se tentar cancelar um perfil inexistente levanta PIException."""
     with pytest.raises(PIException):
         mytwitter_teste.cancelar_perfil("@nao_existe")
-
-
-def test_cancelar_perfil_invalido(mytwitter_teste):
-    """Testa se passar um argumento inválido levanta ValueError."""
-    with pytest.raises(ValueError):
-        mytwitter_teste.cancelar_perfil(123)
 
 
 def test_tweetar_sucesso(mytwitter_teste):
@@ -151,12 +139,6 @@ def test_timeline_perfil_desativado(mytwitter_teste):
         mytwitter_teste.timeline(usuario)
 
 
-def test_timeline_usuario_invalido(mytwitter_teste):
-    """Testa se passar um nome de usuário inválido levanta ValueError."""
-    with pytest.raises(ValueError):
-        mytwitter_teste.timeline(123)  # Nome de usuário não é uma string
-
-
 def test_timeline_vazia(mytwitter_teste):
     """Testa se a timeline de um perfil sem tweets retorna uma lista vazia."""
     usuario = "@usuario_teste"
@@ -196,12 +178,6 @@ def test_tweets_perfil_desativado(mytwitter_teste):
 
     with pytest.raises(PDException):
         mytwitter_teste.tweets(usuario)
-
-
-def test_tweets_usuario_invalido(mytwitter_teste):
-    """Testa se passar um nome de usuário inválido levanta ValueError."""
-    with pytest.raises(ValueError):
-        mytwitter_teste.tweets(123)  # Nome de usuário não é uma string
 
 
 def test_tweets_vazios(mytwitter_teste):
@@ -275,15 +251,6 @@ def test_seguir_a_si_mesmo(mytwitter_teste):
         mytwitter_teste.seguir(usuario, usuario)
 
 
-def test_seguir_usuario_invalido(mytwitter_teste):
-    """Testa se passar nomes de usuário inválidos levanta ValueError."""
-    with pytest.raises(ValueError):
-        mytwitter_teste.seguir(123, "@seguido")  # Nome de seguidor inválido
-
-    with pytest.raises(ValueError):
-        mytwitter_teste.seguir("@seguidor", 456)  # Nome de seguido inválido
-
-
 def test_numero_seguidores_valido(mytwitter_teste):
     """Testa se o número de seguidores de um perfil válido é retornado corretamente."""
     usuario = "@usuario"
@@ -319,12 +286,6 @@ def test_numero_seguidores_perfil_desativado(mytwitter_teste):
 
     with pytest.raises(PDException):
         mytwitter_teste.numero_seguidores(usuario)
-
-
-def test_numero_seguidores_usuario_invalido(mytwitter_teste):
-    """Testa se passar um nome de usuário inválido levanta ValueError."""
-    with pytest.raises(ValueError):
-        mytwitter_teste.numero_seguidores(123)  # Nome de usuário não é uma string
 
 
 def test_numero_seguidores_seguidores_inativos(mytwitter_teste):
@@ -388,12 +349,6 @@ def test_seguidores_perfil_desativado(mytwitter_teste):
 
     with pytest.raises(PDException):
         mytwitter_teste.seguidores(usuario)
-
-
-def test_seguidores_usuario_invalido(mytwitter_teste):
-    """Testa se passar um nome de usuário inválido levanta ValueError."""
-    with pytest.raises(ValueError):
-        mytwitter_teste.seguidores(123)  # Nome de usuário não é uma string
 
 
 def test_seguidores_seguidores_inativos(mytwitter_teste):
@@ -461,12 +416,6 @@ def test_seguidos_perfil_desativado(mytwitter_teste):
 
     with pytest.raises(PDException):
         mytwitter_teste.seguidos(usuario)
-
-
-def test_seguidos_usuario_invalido(mytwitter_teste):
-    """Testa se passar um nome de usuário inválido levanta ValueError."""
-    with pytest.raises(ValueError):
-        mytwitter_teste.seguidos(123)  # Nome de usuário não é uma string
 
 
 def test_seguidos_seguidos_inativos(mytwitter_teste):

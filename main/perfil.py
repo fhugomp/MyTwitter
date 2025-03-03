@@ -1,5 +1,4 @@
 from main.tweet import Tweet
-from main.perfil import Perfil
 
 
 class Perfil:
@@ -46,7 +45,7 @@ class Perfil:
             self.__tweets, key=lambda tweet: tweet.get_data_postagem(), reverse=True
         )
 
-    def get_seguidores(self) -> list[Perfil]:
+    def get_seguidores(self) -> list["Perfil"]:
         """Retorna a lista de perfils seguidores
 
         Returns:
@@ -54,7 +53,7 @@ class Perfil:
         """
         return self.__seguidores
 
-    def get_seguidos(self) -> list[Perfil]:
+    def get_seguidos(self) -> list["Perfil"]:
         """Recupera a lista de perfis seguidos
 
         Returns:
