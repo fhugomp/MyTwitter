@@ -1,14 +1,13 @@
-from datetime import datetime
-
 from main.tweet import Tweet
+from main.perfil import Perfil
 
 
 class Perfil:
     def __init__(self, usuario: str) -> None:
         self.__usuario = usuario
-        self.__seguidos = []
-        self.__seguidores = []
-        self.__tweets = []
+        self.__seguidos: list[Perfil] = []
+        self.__seguidores: list[Perfil] = []
+        self.__tweets: list[Tweet] = []
         self.__ativo = True
 
     def add_seguidor(self, perfil: "Perfil") -> None:
@@ -35,7 +34,7 @@ class Perfil:
         """
         self.__tweets.append(Tweet(self.__usuario, mensagem))
 
-    def get_tweets(self) -> list:
+    def get_tweets(self) -> list[Tweet]:
         """Recupera todos os tweets ordenados pela data de postagem
 
         Returns:
@@ -47,7 +46,7 @@ class Perfil:
             self.__tweets, key=lambda tweet: tweet.get_data_postagem(), reverse=True
         )
 
-    def get_seguidores(self) -> list:
+    def get_seguidores(self) -> list[Perfil]:
         """Retorna a lista de perfils seguidores
 
         Returns:
@@ -55,7 +54,7 @@ class Perfil:
         """
         return self.__seguidores
 
-    def get_seguidos(self) -> list:
+    def get_seguidos(self) -> list[Perfil]:
         """Recupera a lista de perfis seguidos
 
         Returns:
@@ -76,13 +75,13 @@ class Perfil:
             if id == tweet.get_id():
                 return tweet
 
-    def get_timeline(self) -> list:
+    def get_timeline(self) -> list[Tweet]:
         """Retorna a lista de tweets incluindo os do perfil como os dos seguidos
 
         Returns:
             list: Lista de tweets ordenados
         """
-        timeline = []
+        timeline: list[Tweet] = []
         timeline.extend(self.__tweets)  # Adiciona os tweets do perfil atual
 
         # Adiciona os tweets dos perfis seguidos

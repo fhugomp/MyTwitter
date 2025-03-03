@@ -5,7 +5,7 @@ from main.perfil import Perfil
 
 class RepositorioUsuarios:
     def __init__(self):
-        self.__usuarios = []
+        self.__usuarios: list[Perfil] = []
 
     def cadastrar(self, usuario: Perfil) -> None:
         """
@@ -18,8 +18,6 @@ class RepositorioUsuarios:
             ValueError: Se o objeto passado não for uma instância de Perfil.
             UJCException: Se o usuário já estiver cadastrado.
         """
-        if not isinstance(usuario, Perfil):
-            raise ValueError("O objeto fornecido não é uma instância de Perfil.")
 
         try:
             self.buscar(usuario.get_usuario())
@@ -58,8 +56,6 @@ class RepositorioUsuarios:
             ValueError: Se o objeto passado não for uma instância de Perfil.
             UNCException: Se o usuário não estiver cadastrado.
         """
-        if not isinstance(novo_usuario, Perfil):
-            raise ValueError("O objeto fornecido não é uma instância de Perfil.")
 
         for pos, perfil in enumerate(self.__usuarios):
             if perfil.get_usuario() == novo_usuario.get_usuario():

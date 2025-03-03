@@ -23,8 +23,6 @@ class MyTwitter:
             ValueError: Caso o perfil enviado não foi instacia de Perfil
             PEException: Quando o perfil ja existe
         """
-        if not isinstance(perfil, Perfil):
-            raise ValueError
 
         try:
             # Se o usuário já existir, lança PEException
@@ -46,8 +44,6 @@ class MyTwitter:
             PIException: Se o perfil não for encontrado.
             PDException: Se o perfil já estiver desativado.
         """
-        if not isinstance(usuario, str):
-            raise ValueError("O nome de usuário deve ser uma string.")
 
         try:
             perfil = self.__repositorio.buscar(usuario)
@@ -74,8 +70,6 @@ class MyTwitter:
             PDException: Se o perfil estiver desativado.
             MFPException: Se a mensagem não estiver entre 1 e 140 caracteres.
         """
-        if not isinstance(usuario, str):
-            raise ValueError("O nome de usuário deve ser uma string.")
 
         if not (1 <= len(mensagem) <= 140):
             raise MFPException("A mensagem deve ter entre 1 e 140 caracteres.")
@@ -91,7 +85,7 @@ class MyTwitter:
         novo_tweet = Tweet(usuario, mensagem)
         usuario_buscado.add_tweet(novo_tweet.get_mensagem())
 
-    def timeline(self, usuario: str) -> list:
+    def timeline(self, usuario: str) -> list[Tweet]:
         """
         Recupera todos os tweets da timeline do perfil do usuário informado.
 
@@ -106,8 +100,6 @@ class MyTwitter:
             PIException: Se o perfil não existir.
             PDException: Se o perfil estiver desativado.
         """
-        if not isinstance(usuario, str):
-            raise ValueError("O nome de usuário deve ser uma string.")
 
         try:
             usuario_buscado = self.__repositorio.buscar(usuario)
@@ -119,7 +111,7 @@ class MyTwitter:
 
         return usuario_buscado.get_timeline()
 
-    def tweets(self, usuario: str) -> list:
+    def tweets(self, usuario: str) -> list[Tweet]:
         """Retorna os tweets do usuario enviado.
 
         Args:
@@ -133,8 +125,6 @@ class MyTwitter:
         Returns:
             list: Lista de tweets
         """
-        if not isinstance(usuario, str):
-            raise ValueError("O nome de usuário deve ser uma string.")
 
         try:
             usuario_buscado = self.__repositorio.buscar(usuario)
@@ -160,8 +150,6 @@ class MyTwitter:
             PDException: Se o perfil do seguidor ou seguido estiver desativado.
             SIException: Se o seguidor tentar seguir a si mesmo.
         """
-        if not isinstance(seguidor, str) or not isinstance(seguido, str):
-            raise ValueError("Os nomes de usuário devem ser strings.")
 
         if seguidor == seguido:
             raise SIException("Um usuário não pode seguir a si mesmo.")
@@ -196,8 +184,6 @@ class MyTwitter:
             PIException: Se o perfil não existir.
             PDException: Se o perfil estiver desativado.
         """
-        if not isinstance(usuario, str):
-            raise ValueError("O nome de usuário deve ser uma string.")
 
         try:
             perfil = self.__repositorio.buscar(usuario)
@@ -214,7 +200,7 @@ class MyTwitter:
 
         return len(seguidores_ativos)
 
-    def seguidores(self, usuario: str) -> list:
+    def seguidores(self, usuario: str) -> list[Perfil]:
         """
         Retorna a lista de seguidores do perfil do usuário informado.
 
@@ -229,8 +215,6 @@ class MyTwitter:
             PIException: Se o perfil não existir.
             PDException: Se o perfil estiver desativado.
         """
-        if not isinstance(usuario, str):
-            raise ValueError("O nome de usuário deve ser uma string.")
 
         try:
             perfil = self.__repositorio.buscar(usuario)
@@ -247,7 +231,7 @@ class MyTwitter:
 
         return seguidores_ativos
 
-    def seguidos(self, usuario: str) -> list:
+    def seguidos(self, usuario: str) -> list[Perfil]:
         """
         Retorna a lista de perfis seguidos pelo usuário informado.
 
@@ -262,8 +246,6 @@ class MyTwitter:
             PIException: Se o perfil não existir.
             PDException: Se o perfil estiver desativado.
         """
-        if not isinstance(usuario, str):
-            raise ValueError("O nome de usuário deve ser uma string.")
 
         try:
             perfil = self.__repositorio.buscar(usuario)

@@ -4,7 +4,6 @@ from exceptions.pe_exception import PEException
 from exceptions.pi_exception import PIException
 from exceptions.si_exception import SIException
 from main.mytwitter import MyTwitter
-from main.perfil import Perfil
 from main.pessoa_fisica import PessoaFisica
 from main.pessoa_juridica import PessoaJuridica
 import time
